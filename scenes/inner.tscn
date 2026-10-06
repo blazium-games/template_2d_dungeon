@@ -1,0 +1,35 @@
+[gd_scene load_steps=2 format=3]
+
+[ext_resource type="Script" path="res://scripts/presenter.gd" id="1_inner"]
+
+[node name="Follow" type="Node2D"]
+script = ExtResource("1_inner")
+map_name = "span"
+seed_value = 5
+follow_path = ""
+cols = 24
+rows = 16
+
+[node name="SheetLens" type="Camera2D" parent="."]
+position = Vector2(192, 128)
+
+[node name="Field" type="Polygon2D" parent="."]
+polygon = PackedVector2Array(0, 0, 384, 0, 384, 256, 0, 256)
+color = Color(0.1, 0.1, 0.12, 1)
+
+[node name="MapSheet" type="Sprite2D" parent="."]
+centered = false
+
+[node name="Walker" type="ColorRect" parent="."]
+offset_right = 12
+offset_bottom = 12
+color = Color(0.9, 0.9, 0.95, 1)
+
+[node name="Hud" type="CanvasLayer" parent="."]
+
+[node name="Tag" type="Label" parent="Hud"]
+offset_left = 8.0
+offset_top = 8.0
+offset_right = 320.0
+offset_bottom = 32.0
+text = "span"
